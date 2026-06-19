@@ -58,7 +58,7 @@
 <body>
   <main>
     <h1>Cluster Support</h1>
-    <p>Cluster connects to your own Hermes Agent gateway. If you need help, email <a href="mailto:rodolfo.arg.ce@gmail.com">rodolfo.arg.ce@gmail.com</a>.</p>
+    <p>Cluster connects to your own Hermes, Odysseus, or OpenClaw gateway. If you need help, email <a href="mailto:rodolfo.arg.ce@gmail.com">rodolfo.arg.ce@gmail.com</a>.</p>
 
     <h2>Connect Hermes</h2>
     <ol>
@@ -66,16 +66,20 @@
       <li>Run <code>hermes setup --portal</code>.</li>
       <li>Copy the API key from <code>~/.hermes/.env</code>.</li>
       <li>Start the gateway with <code>hermes gateway</code>.</li>
-      <li>Open Cluster and tap <strong>Connect Hermes</strong>.</li>
+      <li>Open Cluster and tap <strong>Connect Gateway</strong>.</li>
+      <li>Choose Hermes, enter the host URL, path, and API key, then save the connection.</li>
     </ol>
 
     <h2>Recommended Private Access</h2>
     <p>For iPhone access outside the Hermes host, use a private network such as Tailscale and expose Hermes under <code>/hermes</code>.</p>
 
+    <h2>Odysseus and OpenClaw</h2>
+    <p>Advanced users can also connect Odysseus with an API token or OpenClaw with a bootstrap token. Use the provider's gateway URL, matching path, and TLS setting from your own installation.</p>
+
     <h2>Troubleshooting</h2>
     <ul>
-      <li>Check that the Hermes gateway is running and reachable from the device.</li>
-      <li>Confirm that the API key in Cluster matches the key on the Hermes host.</li>
+      <li>Check that the gateway is running and reachable from the device.</li>
+      <li>Confirm that the token in Cluster matches the token on the gateway host.</li>
       <li>If you use a reverse proxy, confirm the path and TLS settings in the Advanced section.</li>
     </ul>
   </main>
