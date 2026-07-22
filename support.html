@@ -60,27 +60,31 @@
     <h1>Cluster Support</h1>
     <p>Cluster connects to your own Hermes, Odysseus, or OpenClaw gateway. If you need help, email <a href="mailto:rodolfo.arg.ce@gmail.com">rodolfo.arg.ce@gmail.com</a>.</p>
 
-    <h2>Connect Hermes</h2>
+    <h2>Connect a Gateway</h2>
     <ol>
-      <li>Install Hermes on the Mac or server you want Cluster to use.</li>
-      <li>Run <code>hermes setup --portal</code>.</li>
-      <li>Copy the API key from <code>~/.hermes/.env</code>.</li>
-      <li>Start the gateway with <code>hermes gateway</code>.</li>
-      <li>Open Cluster and tap <strong>Connect Gateway</strong>.</li>
-      <li>Choose Hermes, enter the host URL, path, and API key, then save the connection.</li>
+      <li>Install the gateway software on the Mac or server you want Cluster to use.</li>
+      <li>Configure it per the gateway's own documentation, then start it — for Hermes, run <code>hermes gateway run</code> in the foreground, or if installed as a background service use <code>hermes gateway start</code>.</li>
+      <li>Copy the API key, bearer token, or bootstrap token from your gateway installation.</li>
+      <li>Open Cluster and tap <strong>Connect Gateway</strong> or go to <strong>Settings &gt; Gateway</strong>.</li>
+      <li>Choose your provider type (Hermes, Odysseus, OpenClaw), enter the host URL, path, and authentication token, then save the connection.</li>
     </ol>
 
     <h2>Recommended Private Access</h2>
-    <p>For iPhone access outside the Hermes host, use a private network such as Tailscale and expose Hermes under <code>/hermes</code>.</p>
+    <p>For iPhone access outside the gateway host, use a private network such as Tailscale and expose the gateway under a path prefix such as <code>/hermes</code>.</p>
 
     <h2>Odysseus and OpenClaw</h2>
-    <p>Advanced users can also connect Odysseus with an API token or OpenClaw with a bootstrap token. Use the provider's gateway URL, matching path, and TLS setting from your own installation.</p>
+    <p>Advanced users can also connect Odysseus with an API bearer token or OpenClaw with a bootstrap token. Use the provider's gateway URL, matching path prefix, and TLS setting from your own installation. The token must match exactly what the gateway host expects.</p>
+
+    <h2>Attachments</h2>
+    <p>Cluster can attach images from your photo library. Images are supported across all gateway providers. PDF and text-file attachments are sent only when the gateway supports file uploads — currently this means an Odysseus gateway using the upload-backed attachment provider.</p>
 
     <h2>Troubleshooting</h2>
     <ul>
-      <li>Check that the gateway is running and reachable from the device.</li>
-      <li>Confirm that the token in Cluster matches the token on the gateway host.</li>
-      <li>If you use a reverse proxy, confirm the path and TLS settings in the Advanced section.</li>
+      <li>Make sure the gateway is running and reachable from the device — for Hermes, check with <code>hermes gateway status</code>, or confirm your foreground <code>hermes gateway run</code> process is active.</li>
+      <li>Check that the token saved in Cluster matches the token on the gateway host — a mismatch is the most common connection failure.</li>
+      <li>Verify the host URL, path prefix, and port. If the gateway listens on a non-default port, include it in the URL.</li>
+      <li>If you use a reverse proxy, confirm the path prefix and TLS settings in the connection's Advanced section.</li>
+      <li>If the app shows "Connect Gateway" again after a successful connection, the saved connection profile may be incomplete — delete the profile and re-enter the details.</li>
     </ul>
   </main>
 </body>

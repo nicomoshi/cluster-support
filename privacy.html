@@ -63,7 +63,7 @@
     <h2>Data You Provide</h2>
     <ul>
       <li>Connection details, such as your gateway host, path, provider type, and API or bootstrap token.</li>
-      <li>Messages, images, and prompts that you send to your configured gateway.</li>
+      <li>Messages, selected attachments (images, and PDF or text-style files when the gateway supports them), and prompts that you send to your configured gateway.</li>
       <li>Optional voice input, text-to-speech settings, and generated audio cache entries if you use voice features.</li>
     </ul>
 
@@ -71,7 +71,7 @@
     <p>Connection credentials are stored on your device using the system keychain. App settings and non-sensitive connection details are stored locally on your device.</p>
 
     <h2>Network Services</h2>
-    <p>When you use Cluster, messages and any selected images are sent to the Hermes, Odysseus, or OpenClaw gateway you configure. If you enable text-to-speech, the text to be spoken may be sent to Fish Audio to synthesize audio. Speech recognition and system permission prompts are handled by Apple platform services.</p>
+    <p>When you use Cluster, messages and any selected attachments are sent to the Hermes, Odysseus, or OpenClaw gateway you configure. Images are supported across all release providers. PDF and text-style file attachments are delivered only when the gateway supports file uploads — currently this means an Odysseus gateway using the upload-backed attachment provider. If you enable text-to-speech, the text to be spoken may be sent to Fish Audio to synthesize audio. Speech recognition and system permission prompts are handled by Apple platform services.</p>
 
     <h2>App Store Privacy Labels</h2>
     <p>Cluster's App Store privacy answers disclose app-functionality use of user content, photos or videos, audio, and device identifiers. Cluster does not use this data for tracking.</p>
